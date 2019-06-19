@@ -1,8 +1,21 @@
-export class C {
-    private x = 10
-    getX = () => this.x;
-    setX = (newVal: number) => { this.x = newVal; }
+class Journal {
+    data: string
+    constructor(public id: number, public date: string, public title: string, public name: string) {
+        this.data = id + " " + date+ " " + title + " " + name
+    }
 }
 
-export let x = new C();
-export let y = { ...{ some: "value" } }
+interface Page {
+    id: number
+    date: string
+    title: string
+    name: string
+}
+
+function display(page: Page) {
+    return "ID: " + page.id + " Date: " + page.date + " Title: " + page.title + " Name: " + page.name
+}
+
+let journal = new Journal(1, "0000-00-00", "page title", "test journal")
+
+document.body.innerHTML = display(journal)
