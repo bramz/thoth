@@ -1,7 +1,7 @@
 {
   "name": "app",
-  "version": "0.1",
-  "license": "MIT",
+  "version": "0.0.1",
+  "license": "Apache 2",
   "scripts": {
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
@@ -16,7 +16,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
     "@babel/preset-env": "^7.4.1",
     "@babel/preset-typescript": "^7.3.3",
-    "typescript": "^3.3.3"
+    "typescript": "^3.5.2"
   },
   "description": "A bullet journal",
   "main": "index.js",
