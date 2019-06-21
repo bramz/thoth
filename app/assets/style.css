@@ -37,7 +37,7 @@ body {
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   width: 816px;
-  height: 1056px;
+  height: 556px;
 }
 
 nav {
@@ -73,4 +73,12 @@ nav ul li a, nav ul li span, header .action {
   display: block;
   padding: 0.5rem;
   color: 		#2c2f33;
+}
+
+.book-footing {
+  margin: 0 auto;
+  padding: 6px 5px 4px 42px;
+  position: relative;
+  width: 816px;
+  text-align: center;
 }
