@@ -40,6 +40,13 @@ body {
   height: 556px;
 }
 
+.paper h1 {
+  font-size: 40px;
+}
+.paper h2 {
+  font-size: 30px;
+}
+
 nav {
   background: 	#7289da;
   display: flex;

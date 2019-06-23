@@ -1,21 +1,24 @@
-class Journal {
-    data: string
-    constructor(public id: number, public date: string, public title: string, public name: string) {
-        this.data = id + " " + date+ " " + title + " " + name
-    }
+let get_page = () => {
+    fetch('/page', {method: 'GET'})
+        .then(response => response.json())
+        .then(data => callback(data))
+        .catch(error => console.log(error))
 }
 
-interface Page {
-    id: number
-    date: string
-    title: string
-    name: string
+let callback = (data: any) => {
+    console.log(data)
+    document.body.innerHTML +=
+        `<div class="paper">
+             <h1>${data.title}</h1>
+             <h2>${data.date}</h2>
+             <p>${data.content}</p>
+         </div>
+         <div class="book-footing">
+             <a href="#">&lt;&lt; Last</a> &verbar; <a href="#">Next &gt;&gt;</a>
+         </div>
+        `
 }
 
-function display(page: Page) {
-    return "ID: " + page.id + " Date: " + page.date + " Title: " + page.title + " Name: " + page.name
-}
-
-let journal = new Journal(1, "0000-00-00", "page title", "test journal")
-
-document.body.innerHTML = display(journal)
+window.addEventListener('DOMContentLoaded', (event) => {
+    get_page()
+})
