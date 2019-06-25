@@ -89,3 +89,7 @@ nav ul li a, nav ul li span, header .action {
   width: 816px;
   text-align: center;
 }
+
+.entry li {
+  list-style-type: none;
+}
