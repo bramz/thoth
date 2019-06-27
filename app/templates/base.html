@@ -8,12 +8,14 @@
         <nav>
           <h1><a href="{{ url_for('index') }}">Thoth</a></h1>
             <ul>
+                <li><a href="/entry">Create Entry</a></li>
+                <!-- Disable login for now
                 <li><a href="/user/login">Login</a></li>
                 <li><a href="/user/register">Register</a></li>
+                -->
             </ul>
-        </na>
+        </nav>
         {% block content %}
         {% endblock %}
-        <script src="{{ url_for('static', filename='lib/index.js') }}"></script>
     </body>
 </html>
