@@ -69,6 +69,17 @@ Flask = "*"
 
 [[package]]
 category = "main"
+description = "User session management for Flask"
+name = "flask-login"
+optional = false
+python-versions = "*"
+version = "0.4.1"
+
+[package.dependencies]
+Flask = "*"
+
+[[package]]
+category = "main"
 description = "Various helpers to pass data to untrusted environments and back."
 name = "itsdangerous"
 optional = false
@@ -173,7 +184,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "0.15.4"
 
 [metadata]
-content-hash = "95b2d1d1ff070faffcdafe48474e88d522f0ee65f8d7b5c6074467b04aef17a7"
+content-hash = "5edcca9c1102af777b368760e10c96ccb3b6a4e72297283e1210a959ea7ed8b2"
 python-versions = "^3.7"
 
 [metadata.hashes]
@@ -183,6 +194,7 @@ entrypoints = ["589f874b313739ad35be6e0cd7efde2a4e9b6fea91edcc34e58ecbb8dbe56d19
 flake8 = ["859996073f341f2670741b51ec1e67a01da142831aa1fdc6242dbf88dffbe661", "a796a115208f5c03b18f332f7c11729812c8c3ded6c46319c59b53efd3819da8"]
 flask = ["ad7c6d841e64296b962296c2c2dabc6543752985727af86a975072dea984b6f3", "e7d32475d1de5facaa55e3958bc4ec66d3762076b074296aa50ef8fdc5b9df61"]
 flask-cachebuster = ["0c8d7b57db8953f5c5875153f16cb970c2ed5a681b39326613c822f0c9764ec8"]
+flask-login = ["c815c1ac7b3e35e2081685e389a665f2c74d7e077cb93cecabaea352da4752ec"]
 itsdangerous = ["321b033d07f2a4136d3ec762eac9f16a10ccd60f53c0c91af90217ace7ba1f19", "b12271b2047cb23eeb98c8b5622e2e5c5e9abd9784a153e9d8ef9cb4dd09d749"]
 jinja2 = ["065c4f02ebe7f7cf559e49ee5a95fb800a9e4528727aec6f24402a5374c65013", "14dd6caf1527abb21f08f86c784eac40853ba93edb79552aa1e4b8aef1b61c7b"]
 mako = ["0cfa65de3a835e87eeca6ac856b3013aade55f49e32515f65d999f91a2324162"]
