@@ -1,16 +1,15 @@
-let getPage = () => {
-    fetch('/page', {method: 'GET'})
+let getEntries = () => {
+    fetch('/entries', {method: 'GET'})
         .then(response => response.json())
-        .then(data => callBack(data))
+        .then(data => showEntries(data))
         .catch(error => console.log(error))
 }
 
-let callBack = (data: any) => {
+let showEntries = (data: any) => {
     document.body.innerHTML +=
         `<div class="paper">
-             <h1>${data.title}</h1>
-             <h2>${data.date}</h2>
-             <p>${data.content}</p>
+           <ul>
+             <li>${data.id}&colon; <a href="#">${data.title}</a></li>
          </div>
          <div class="book-footing">
              <a href="#">&lt;&lt; Last</a> &verbar; <a href="#">Next &gt;&gt;</a>
@@ -19,5 +18,5 @@ let callBack = (data: any) => {
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
-    getPage()
+    getEntries()
 })

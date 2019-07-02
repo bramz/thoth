@@ -3,7 +3,7 @@ let createEntry = () => {
        `
       <div id="entry" class="paper">
         <div class="entry">
-          <form action="/entry" method="POST">
+          <form action="/entry" method="post">
             <ul>
               <li><label for="title">Title:</label></li>
               <li><input type="text" id="title" size="80"></li>
@@ -20,7 +20,7 @@ let createEntry = () => {
             'title': (<HTMLInputElement>document.getElementById('title') as any).value,
             'content': (<HTMLInputElement>document.getElementById('content') as any).value
         }
-        console.log(JSON.stringify(payload))
+
         fetch('/entry', {
           method: 'POST',
           headers: {

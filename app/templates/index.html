@@ -1,4 +1,15 @@
 {% extends 'base.html' %}
+{% block navigation %}
+      <ul>
+          <li><a href="{{ url_for('entry') }}">Create Entry</a></li>
+      {% if user.is_authenticated %}
+          <li><a href="{{ url_for('logout') }}">Logout</a></li>
+      {% else %}
+          <li><a href="{{ url_for('register') }}">Register</a></li>
+          <li><a href="{{ url_for('login')}}">Login</a></li>
+      {% endif %}
+      </ul>
+{% endblock %}
 {% block content %}
     <script src="{{ url_for('static', filename='lib/index.js') }}"></script>
 {% endblock %}
