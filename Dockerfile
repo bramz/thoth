@@ -10,4 +10,4 @@ RUN poetry install
 
 COPY . .
 
-ENTRYPOINT [ "poetry", "run", "python", "app" ]
+ENTRYPOINT [ "poetry", "run", "manage.py" "runserver" ]

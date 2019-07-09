@@ -6,11 +6,8 @@ authors = ["bramz <brockramz@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-flask = "^1.0"
 flake8 = "^3.7"
-Flask-CacheBuster = "^1.0"
-alembic = "^1.0"
-flask-login = "^0.4.1"
+django = "^2.2"
 
 [tool.poetry.dev-dependencies]
 

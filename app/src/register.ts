@@ -34,11 +34,13 @@ let userRegister = () => {
         .then(resp=>resp.text)
         .then(text=> {
           console.log(text)
+          /*
           if (text == 'success') {
             document.location.replace('/')
           } else {
             document.location.reload()
           }
+          */
         })  
     })
 }

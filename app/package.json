@@ -22,5 +22,8 @@
   "main": "index.js",
   "repository": "https://github.com/bramz/thoth",
   "author": "bramz <brockramz@gmail.com>",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "logrocket": "^1.0.1"
+  }
 }
