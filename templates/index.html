@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block navigation %}
+      <ul>
+          <li><a href="entries/entry/">Create Entry</a></li>
+      {% if user.is_authenticated %}
+          <li><a href="user/logout/">Logout</a></li>
+      {% else %}
+          <li><a href="user/register/">Register</a></li>
+          <li><a href="user/login/">Login</a></li>
+      {% endif %}
+      </ul>
+{% endblock %}
+{% block content %}
+    {% load static %}
+    <script src="{% static "/assets/lib/index.js" %}"></script>
+{% endblock %}

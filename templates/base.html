@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% load static %}
         <title>Thoth Bullet Journal</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="{% static "/assets/style.css" %}">
     </head>
     <body>
         <nav>
-            <h1><a href="{{ url_for('index') }}">Thoth</a></h1>
+            <h1><a href="{% url 'index' %}">Thoth</a></h1>
             {% block navigation %}{% endblock %}
         </nav>
         {% block content %}{% endblock %}
