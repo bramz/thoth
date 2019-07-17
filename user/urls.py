@@ -19,4 +19,5 @@ user/register
 
 urlpatterns = [
     path('', include('django.contrib.auth.urls')),
+    url(r'^register/$', views.register, name='register'),
 ]

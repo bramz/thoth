@@ -2,7 +2,7 @@ let userLogin = () => {
     document.body.innerHTML +=
         `
         <div id="login" class="paper">
-          <form action="/login" method="post">
+          <form action="/user/login" method="post">
           <div class="login">
             <ul>
               <li><label for="username">Username:</label></li>
@@ -22,7 +22,7 @@ let userLogin = () => {
         'password': (document.getElementById('password') as any).value
       }
 
-      fetch('/login', {
+      fetch('/user/login', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

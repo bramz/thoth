@@ -7,7 +7,7 @@ from .models import Entries
 
 def entries(request):
     e = Entries.objects.filter(user=request.user.id)
-    return render(request, 'pastes.html', {'pastes': e})
+    return render(request, 'entries.html', {'entries': e})
 
 
 def delete(request, id):
