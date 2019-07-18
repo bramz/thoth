@@ -17,7 +17,9 @@ apt-get install -y --no-install-recommends \
                         tk-dev \
                         uuid-dev \
                         libssl-dev \
-                        libbz2-dev
+                        libbz2-dev \
+                        sqlite3 \
+                        libsqlite3-dev \
 
 
 #
