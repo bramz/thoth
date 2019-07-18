@@ -1,5 +1,5 @@
 let getEntries = () => {
-    fetch('/entries', {method: 'GET'})
+    fetch('/entries/', {method: 'GET'})
         .then(response => response.json())
         .then(data => showEntries(data))
         .catch(error => console.log(error))

@@ -3,7 +3,7 @@ let createEntry = () => {
        `
       <div id="entry" class="paper">
         <div class="entry">
-          <form action="/entry" method="post">
+          <form action="/entry/" method="post">
             <ul>
               <li><label for="title">Title:</label></li>
               <li><input type="text" id="title" size="80"></li>
@@ -21,7 +21,7 @@ let createEntry = () => {
             'content': (<HTMLInputElement>document.getElementById('content') as any).value
         }
 
-        fetch('/entry', {
+        fetch('/entry/', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',

@@ -2,7 +2,7 @@ let userRegister = () => {
     document.body.innerHTML +=
         `
         <div id="login" class="paper">
-          <form action="/user/register" method="post">
+          <form action="/user/register/" method="post">
             <div class="login">
               <ul>
                 <li><label for="username">Username:</label></li>
@@ -23,7 +23,7 @@ let userRegister = () => {
         'active': 1
       }
       
-      fetch('/user/register', {
+      fetch('/user/register/', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

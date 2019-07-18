@@ -4,7 +4,7 @@ Logrocket.init('lawtjy/thoth')
 
 
 let getPage = () => {
-    fetch('/page', {method: 'GET'})
+    fetch('/page/', {method: 'GET'})
         .then(response => response.json())
         .then(data => callBack(data))
         .catch(error => console.log(error))
