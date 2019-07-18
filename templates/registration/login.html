@@ -3,7 +3,10 @@
     {% load static %}
     <div class="paper">
         {% if user.is_authenticated %}
-        <p>{{ user.username }} you're logged in already. <a href="{% url 'logout' %}">Logout?</a></p>
+          <h1>Journal Overview</h1>
+          <h2>Creator: {{ user.username }}</h2>
+          <p><a href="{% url 'entry' %}">Create Entry</a></p>
+          <p><a href="{% url 'entries' %}">View Entries</a></p>
         {% else %}
         <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
