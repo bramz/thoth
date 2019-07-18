@@ -1,5 +1,26 @@
 {% extends 'base.html' %}
-{% block content %}
-  {% load static %}
+{% block content %}{% load static %}
+<div class="paper">
+  <form id="form" method="post">
+    {% csrf_token %}
+    {% if form.errors %}
+      {% for field, errors in form.errors.items %}
+        {% for error in errors %}
+      <div class="error">{{ error }}</div>
+        {% endfor %}
+      {% endfor %}
+    {% endif %}
+    <p>{{ form.username.label_tag }}</p>
+    <p>{{ form.username }}</p>
+    <p>{{ form.password1.label_tag }}</p>
+    <p>{{ form.password1 }}</p>
+    <p>{{ form.password2.label_tag }}</p>
+    <p>{{ form.password2 }}</p>
+    <input type="submit" id="register" value="Register" />
+    <p><a href="{% url 'index' %}">Go back</a></p>
+  </form>
+</div>
+<!--
   <script src="{% static "/assets/lib/register.js" %}"></script>
+-->
 {% endblock %}

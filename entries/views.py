@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
@@ -23,6 +24,7 @@ def read(request, id):
 
 def entry(request):
     if request.method == 'POST':
+        body = json.loads(request.body.decode('utf-8'))
         if request.user.id is None:
             userid = 'anonymous'
         else:
@@ -31,7 +33,7 @@ def entry(request):
         e = Entries.objects.create(
             title=body['title'],
             user=userid,
-            entry=body['entry'],
+            entry=body['content'],
         )
         e.save()
 

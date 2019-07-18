@@ -1,3 +1,18 @@
+function getCookie(name: string) {
+  let cookieValue = null
+  if (document.cookie && document.cookie != '') {
+    let cookies = document.cookie.split(';')
+    for (let i = 0; i < cookies.length; i++) {
+      let cookie = cookies[i].trim()
+      if (cookie.substring(0, name.length + 1) == (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1))
+          break
+      }
+    }
+  }
+  return cookieValue
+}
+
 let createEntry = () => {
     document.body.innerHTML +=
        `
@@ -21,12 +36,15 @@ let createEntry = () => {
             'content': (<HTMLInputElement>document.getElementById('content') as any).value
         }
 
-        fetch('/entry/', {
+        let requestHeaders: any = {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'X-CSRFToken': getCookie('csrftoken')
+        }
+
+        fetch('/entries/entry/', {
           method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
+          headers: requestHeaders,
           body: JSON.stringify(payload)
         })
           .then(resp=>resp.text)
