@@ -47,8 +47,13 @@ let createEntry = () => {
           headers: requestHeaders,
           body: JSON.stringify(payload)
         })
-          .then(resp=>resp.text)
-          .then(text=>console.log(text))
+          .then(resp=>resp.text())
+          .then(text=> {
+            console.log(text)
+            if(text == 'success') {
+              window.location.href = '/entries/'
+            }
+          })
     })
 }
 

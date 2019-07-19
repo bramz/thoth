@@ -1,6 +1,6 @@
 import json
 from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse
 from django.shortcuts import redirect
 
 from .models import Entries
@@ -38,5 +38,6 @@ def entry(request):
             entry=body['content'],
         )
         e.save()
+        return HttpResponse("success")
 
     return render(request, 'entry.html')

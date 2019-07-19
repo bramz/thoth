@@ -1,15 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="paper">
+      <div class="entries">
         <ul>
           {% for entry in entries %}
             <li>{{entry.id}}&colon; <a href="{{entry.id}}/">{{entry.title}}</a></li>
           {% endfor %}
         </ul>
+      </div>
     </div>
-  <!--
-  <div class="book-footing">
-      <a href="#">&lt;&lt; Last</a> &verbar; <a href="#">Next &gt;&gt;</a>
-  </div>
-  -->
 {% endblock %}

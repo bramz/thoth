@@ -38,6 +38,7 @@ body {
   box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   width: 816px;
   height: 556px;
+  overflow: scroll;
 }
 
 .paper h1 {
@@ -45,6 +46,9 @@ body {
 }
 .paper h2 {
   font-size: 30px;
+}
+.paper p {
+  white-space: pre-line;
 }
 
 nav {
@@ -95,5 +99,9 @@ nav ul li a, nav ul li span, header .action {
 }
 
 .login li {
+  list-style-type: none;
+}
+
+.entries li {
   list-style-type: none;
 }
