@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% load static %}
-    <script src="{% static "/assets/lib/entries.js" %}"></script>
+    <div class="paper">
+        <ul>
+          {% for entry in entries %}
+            <li>{{entry.id}}&colon; <a href="{{entry.id}}/">{{entry.title}}</a></li>
+          {% endfor %}
+        </ul>
+    </div>
+  <!--
+  <div class="book-footing">
+      <a href="#">&lt;&lt; Last</a> &verbar; <a href="#">Next &gt;&gt;</a>
+  </div>
+  -->
 {% endblock %}

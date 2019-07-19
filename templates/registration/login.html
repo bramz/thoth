@@ -1,5 +1,34 @@
 {% extends 'base.html' %}
 {% block content %}
     {% load static %}
+    <div class="paper">
+        {% if user.is_authenticated %}
+          <h1>Journal Overview</h1>
+          <h2>Creator: {{ user.username }}</h2>
+          <p><a href="{% url 'entry' %}">Create Entry</a></p>
+          <p><a href="{% url 'entries' %}">View Entries</a></p>
+        {% else %}
+        <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+          {% if form.errors %}
+            {% for field, errors in form.errors.items %}
+              {% for error in errors %}
+          <div class="error">{{ error }}</div>
+              {% endfor %}
+            {% endfor %}
+          {% endif %}
+          <p>{{ form.username.label_tag }}</p>
+          <p>{{ form.username }}</p>
+          <p>{{ form.password.label_tag }}</p>
+          <p>{{ form.password }}</p>
+          <input type="submit" name="submit" value="Login" />
+          <div>
+            <a href="{% url 'index' %}">Go back</a>
+          </div>
+        </form>
+        {% endif %}
+    </div>
+    <!--
     <script src="{% static "/assets/lib/login.js" %}"></script>
+    -->
 {% endblock %}

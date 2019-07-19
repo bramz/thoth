@@ -8,7 +8,16 @@
     <body>
         <nav>
             <h1><a href="{% url 'index' %}">Thoth</a></h1>
-            {% block navigation %}{% endblock %}
+            <ul>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'entries' %}">Create Entry</a></li>
+                <li><a href="{% url 'entry' %}">My Entries</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+            </ul>
         </nav>
         {% block content %}{% endblock %}
     </body>
